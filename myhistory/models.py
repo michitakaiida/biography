@@ -6,7 +6,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=200)
     mission_statement = models.TextField(blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
-    birthday = models.DateTimeField(blank=True, null=True)
+    birthday = models.DateField(blank=True, null=True)
     dream1 = models.CharField(max_length=200, blank=True, null=True)
     dream2 = models.CharField(max_length=200, blank=True, null=True)
     dream3 = models.CharField(max_length=200, blank=True, null=True)
@@ -22,4 +22,4 @@ class Profile(models.Model):
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.name
