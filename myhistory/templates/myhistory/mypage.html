@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
 </head>
 <body>
-<button type="button" class="btn btn-default navbar-btn">Sign in</button>
-<h1>Hello!! {{my_prifile.name}}</h1>
-<p class="navbar-text">Signed in as Mark Otto</p>
 
-{{my_prifile.profile_image}}
-<img src=media/{{my_prifile.profile_image}}>
+<nav class="navbar navbar-default">
+  <div class="container">
+      <p class="navbar-text navbar-right"> <a href="#" class="navbar-link">Sigin out</a></p>
+      <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+  </div>
+</nav>
+
+
+
+
+<h1>Hello!! {{my_prifile.name}}</h1>
+
+<img src=media/{{my_prifile.profile_image}} class="img-circle" width="150" height="150">
 </body>
 </html>
