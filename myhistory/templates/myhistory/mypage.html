@@ -1,12 +1,17 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
 </head>
 <body>
-Hello!!
-{{my_prifile.name}}
+<button type="button" class="btn btn-default navbar-btn">Sign in</button>
+<h1>Hello!! {{my_prifile.name}}</h1>
+<p class="navbar-text">Signed in as Mark Otto</p>
+
 {{my_prifile.profile_image}}
 <img src=media/{{my_prifile.profile_image}}>
 </body>
