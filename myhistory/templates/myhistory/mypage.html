@@ -16,11 +16,51 @@
   </div>
 </nav>
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <img src=media/{{my_prifile.profile_image}} class="img-circle center-block" width="150" height="150">
+            <p class="text-center">{{my_prifile.name}}</p>
+        </div>
+        <div class="col-md-4">
+            {{my_prifile.mission_statement}}
+        </div>
+        <div class="col-md-6">
+            <div class="row ">
+                <div class="col-md-1">
+                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-3">
+                    {{my_prifile.stronPoint1}}
+                </div>
+                <div class="col-md-3">
+                    {{my_prifile.stronPoint2}}
+                </div>
+                <div class="col-md-3">
+                    {{my_prifile.stronPoint3}}
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-1">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </div>
+                <div class="col-md-3">
+                    {{my_prifile.weekPoint1}}
+                </div>
+                <div class="col-md-3">
+                    {{my_prifile.weekPoint2}}
+                </div>
+                <div class="col-md-3">
+                    {{my_prifile.weekPoint3}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
-<h1>Hello!! {{my_prifile.name}}</h1>
 
-<img src=media/{{my_prifile.profile_image}} class="img-circle" width="150" height="150">
+
 </body>
 </html>
