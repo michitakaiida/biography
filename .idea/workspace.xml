@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5cbba50c-eec8-442b-ba4f-3bd7193a1d93" name="Default" comment="">
+    <list default="true" id="5cbba50c-eec8-442b-ba4f-3bd7193a1d93" name="Default" comment="モデルの更新と、Adminから変更できるように、Adminに追加">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/my.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myhistory/admin.py" afterPath="$PROJECT_DIR$/myhistory/admin.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myhistory/models.py" afterPath="$PROJECT_DIR$/myhistory/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myhistory/templates/myhistory/mypage.html" afterPath="$PROJECT_DIR$/myhistory/templates/myhistory/mypage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myhistory/views.py" afterPath="$PROJECT_DIR$/myhistory/views.py" />
     </list>
     <ignored path="src.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +31,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myhistory/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9104478">
-              <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.65007776">
+              <caret line="42" column="14" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="14" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -41,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/myhistory/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -50,8 +53,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myhistory/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+            <state vertical-scroll-proportion="-3.8888888">
+              <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -62,8 +65,18 @@
       <file leaf-file-name="mypage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myhistory/templates/myhistory/mypage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0416665">
-              <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
+            <state vertical-scroll-proportion="-6.8431373">
+              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/my.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="18" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -88,11 +101,12 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/biography/urls.py" />
         <option value="$PROJECT_DIR$/myhistory/urls.py" />
-        <option value="$PROJECT_DIR$/myhistory/views.py" />
         <option value="$PROJECT_DIR$/biography/settings.py" />
-        <option value="$PROJECT_DIR$/myhistory/templates/myhistory/mypage.html" />
+        <option value="$PROJECT_DIR$/static/css/my.css" />
         <option value="$PROJECT_DIR$/myhistory/admin.py" />
         <option value="$PROJECT_DIR$/myhistory/models.py" />
+        <option value="$PROJECT_DIR$/myhistory/views.py" />
+        <option value="$PROJECT_DIR$/myhistory/templates/myhistory/mypage.html" />
       </list>
     </option>
   </component>
@@ -541,7 +555,13 @@
       <option name="project" value="LOCAL" />
       <updated>1488519163517</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="モデルの更新と、Adminから変更できるように、Adminに追加">
+      <created>1488549429252</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1488549429252</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -605,7 +625,8 @@
     <MESSAGE value="bootstrapの導入&#10;静的ページの設定" />
     <MESSAGE value="bootstrapの練習" />
     <MESSAGE value="ざっと、HTMLを書いた" />
-    <option name="LAST_COMMIT_MESSAGE" value="ざっと、HTMLを書いた" />
+    <MESSAGE value="モデルの更新と、Adminから変更できるように、Adminに追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="モデルの更新と、Adminから変更できるように、Adminに追加" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -699,36 +720,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myhistory/templates/myhistory/mypage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0416665">
-          <caret line="21" column="74" selection-start-line="21" selection-start-column="74" selection-end-line="21" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myhistory/views.py">
+    <entry file="file://$PROJECT_DIR$/static/css/my.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myhistory/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myhistory/templates/myhistory/mypage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8431373">
+          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myhistory/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8888888">
+          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myhistory/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9104478">
-          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.65007776">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="14" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

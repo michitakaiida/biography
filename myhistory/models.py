@@ -10,13 +10,13 @@ class Profile(models.Model):
     dream1 = models.CharField(max_length=200, blank=True, null=True)
     dream2 = models.CharField(max_length=200, blank=True, null=True)
     dream3 = models.CharField(max_length=200, blank=True, null=True)
-    stronPoint1 = models.CharField(max_length=200, blank=True, null=True)
-    stronPoint2 = models.CharField(max_length=200, blank=True, null=True)
-    stronPoint3 = models.CharField(max_length=200, blank=True, null=True)
+    strongPoint1 = models.CharField(max_length=200, blank=True, null=True)
+    strongPoint2 = models.CharField(max_length=200, blank=True, null=True)
+    strongPoint3 = models.CharField(max_length=200, blank=True, null=True)
     weekPoint1 = models.CharField(max_length=200, blank=True, null=True)
     weekPoint2 = models.CharField(max_length=200, blank=True, null=True)
     weekPoint3 = models.CharField(max_length=200, blank=True, null=True)
-    profile_image = models.ImageField(upload_to='images/')
+    profile_image = models.ImageField(upload_to='images/', null=True)
 
     def publish(self):
         self.save()
@@ -25,11 +25,12 @@ class Profile(models.Model):
         return self.name
 
 
-class EventType(models.Model):
-    event_type_name = models.CharField(max_length=200, blank=True, null=False)
+class Timeline(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    timeline_name = models.CharField(max_length=200, blank=True, null=False)
 
     def __str__(self):
-        return self.event_type_name
+        return self.timeline_name
 
 
 class Event(models.Model):
@@ -38,8 +39,7 @@ class Event(models.Model):
         (2, 2),
         (3, 3)
     )
-    event_type_id = models.ForeignKey(EventType, on_delete=models.CASCADE)
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    event_type_id = models.ForeignKey(Timeline, on_delete=models.CASCADE)
     event_name = models.CharField(max_length=30, blank=True, null=True)
     event_size = models.PositiveSmallIntegerField(choices=event_size_choice, null=False)
     event_date = models.DateField(null=False)

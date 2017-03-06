@@ -6,6 +6,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/my.css' %}">
 </head>
 <body>
 
@@ -31,13 +32,13 @@
                     <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
                 </div>
                 <div class="col-md-3">
-                    {{my_prifile.stronPoint1}}
+                    {{my_prifile.strongPoint1}}
                 </div>
                 <div class="col-md-3">
-                    {{my_prifile.stronPoint2}}
+                    {{my_prifile.strongPoint2}}
                 </div>
                 <div class="col-md-3">
-                    {{my_prifile.stronPoint3}}
+                    {{my_prifile.strongPoint3}}
                 </div>
             </div>
             <div class="row ">
@@ -56,7 +57,22 @@
             </div>
         </div>
     </div>
+
+    <div class="row ">
+        {% for my_timeline in my_timeline_list %}
+            <div class="col-md-2">
+                {{my_timeline.timeline_name}}
+                </br>
+                {% for my_event in my_event_list %}
+                    {{my_event.event_name}}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
 </div>
+
+
 
 
 
