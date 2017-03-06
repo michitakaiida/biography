@@ -562,7 +562,13 @@
       <option name="project" value="LOCAL" />
       <updated>1488759025050</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="モデルの変更、うまくHTMLにマッピングできなかった">
+      <created>1488759031491</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1488759031492</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
