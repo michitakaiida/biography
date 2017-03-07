@@ -39,12 +39,12 @@ class Event(models.Model):
         (2, 2),
         (3, 3)
     )
-    event_type_id = models.ForeignKey(Timeline, on_delete=models.CASCADE)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    timeline = models.ForeignKey(Timeline, on_delete=models.CASCADE)
     event_name = models.CharField(max_length=30, blank=True, null=True)
     event_size = models.PositiveSmallIntegerField(choices=event_size_choice, null=False)
     event_date = models.DateField(null=False)
     turningpoint_flag = models.BooleanField()
-
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

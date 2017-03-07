@@ -6,7 +6,7 @@ def mypage(request):
     # 後で、filterはログインIDに変える
     my_prifile = Profile.objects.get(name='michi')
     my_timeline_list = Timeline.objects.filter(profile=my_prifile)
-    my_event_list = Event.objects.filter(event_type_id=my_timeline_list)
+    my_event_list = Event.objects.filter(profile=my_prifile).order_by('event_date')
 
     print(my_event_list)
     return render(request, 'myhistory/mypage.html', {'my_prifile': my_prifile,

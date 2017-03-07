@@ -6,7 +6,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/my.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my.css' %}">
 </head>
 <body>
 
@@ -18,55 +18,78 @@
 </nav>
 
 <div class="container-fluid">
+    <div class="row ">
+        <div class="col-md-2 col-md-offset-2">
+            <h1>長所・短所</h1>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-1 col-md-offset-2">
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        </div>
+        <div class="col-md-3">
+            {{my_prifile.strongPoint1}}
+        </div>
+        <div class="col-md-3">
+            {{my_prifile.strongPoint2}}
+        </div>
+        <div class="col-md-3">
+            {{my_prifile.strongPoint3}}
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-1 col-md-offset-2">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </div>
+        <div class="col-md-3">
+            {{my_prifile.weekPoint1}}
+        </div>
+        <div class="col-md-3">
+            {{my_prifile.weekPoint2}}
+        </div>
+        <div class="col-md-3">
+            {{my_prifile.weekPoint3}}
+        </div>
+    </div>
+
+    </br>
+
     <div class="row">
         <div class="col-md-2">
             <img src=media/{{my_prifile.profile_image}} class="img-circle center-block" width="150" height="150">
             <p class="text-center">{{my_prifile.name}}</p>
         </div>
-        <div class="col-md-4">
-            {{my_prifile.mission_statement}}
+        <div>
+            <h1>ミッションステートメント</h1>
         </div>
-        <div class="col-md-6">
-            <div class="row ">
-                <div class="col-md-1">
-                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-3">
-                    {{my_prifile.strongPoint1}}
-                </div>
-                <div class="col-md-3">
-                    {{my_prifile.strongPoint2}}
-                </div>
-                <div class="col-md-3">
-                    {{my_prifile.strongPoint3}}
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col-md-1">
-                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                </div>
-                <div class="col-md-3">
-                    {{my_prifile.weekPoint1}}
-                </div>
-                <div class="col-md-3">
-                    {{my_prifile.weekPoint2}}
-                </div>
-                <div class="col-md-3">
-                    {{my_prifile.weekPoint3}}
-                </div>
-            </div>
+        <div class="col-md-10">
+            {{my_prifile.mission_statement |linebreaks}}
         </div>
     </div>
 
+    </br>
+
     <div class="row ">
         {% for my_timeline in my_timeline_list %}
-            <div class="col-md-2">
-                {{my_timeline.timeline_name}}
+            <div class="col-md-{% widthratio 12 my_timeline_list|length 1 %}">
+                <h2>{{my_timeline.timeline_name}}</h2>
                 </br>
                 {% for my_event in my_event_list %}
-                    {{my_event.event_name}}
+                    {% if my_event.timeline == my_timeline %}
+                        {% if my_event.turningpoint_flag %}
+                            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        {% endif%}
+                        <div class="date_text">
+                            {{my_event.event_date}}
+                        </div>
+
+                        <div class="event_text_{{my_event.event_size}}">
+                            {{my_event.event_name}}
+                        </div>
+                    </br>
+                    {% endif %}
                 {% endfor %}
-            </div>
+                </div>
         {% endfor %}
     </div>
 
