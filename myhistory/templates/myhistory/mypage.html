@@ -76,11 +76,11 @@
                 </br>
                 {% for my_event in my_event_list %}
                     {% if my_event.timeline == my_timeline %}
-                        {% if my_event.turningpoint_flag %}
-                            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                        {% endif%}
                         <div class="date_text">
                             {{my_event.event_date}}
+                            {% if my_event.turningpoint_flag %}
+                            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        {% endif%}
                         </div>
 
                         <div class="event_text_{{my_event.event_size}}">
