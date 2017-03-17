@@ -45,3 +45,16 @@
 	position: relative;
 	border-radius: 5px;
 }
+
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:after {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+input[type=checkbox] + label:after { content: "\f005"; } /* unchecked icon */
+input[type=checkbox] + label:after { letter-spacing: 10px; } /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:after { content: "\f006"; } /* checked icon */
+input[type=checkbox]:checked + label:after { letter-spacing: 10px; } /* allow space for check mark */

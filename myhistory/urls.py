@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT,}),
     url(r'^$', views.mypage),
+    url(r'^event$', views.event_new, name='event_new'),
 ]

@@ -1,0 +1,17 @@
+{% extends 'myhistory/base.html' %}
+
+{% block content %}
+    <h1>New post</h1>
+    <form class="form-inline" method="POST" >{% csrf_token %}
+          <div class="form-group">
+              <label >イベント名</label>
+              {{ form.event_name }}
+          </div>
+            {{ form.turningpoint_flag }}
+            <label for=box1></label>
+            {{ form.event_size }}
+            {{ form.event_date }}
+        </div>
+
+
+{% endblock %}
