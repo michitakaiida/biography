@@ -13,4 +13,4 @@ class EventForm(forms.ModelForm):
 
         }
 
-        fields = ('event_name', 'event_size','event_date','turningpoint_flag')
+        fields = ('event_name', 'event_size','event_date','turningpoint_flag','user','timeline')
