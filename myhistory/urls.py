@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^mypage$', views.mypage, name='mypage'),
     url(r'^event$', views.event_new, name='event_new'),
     url(r'^login/$', auth_views.login, {'template_name': 'myhistory/login.html'}, name='login'),
-    url(r'^logout/$', auth_views.logout, name='logout')
+    url(r'^logout/$', auth_views.logout, {'template_name': 'myhistory/logout.html'}, name='logout')
 ]
