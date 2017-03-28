@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from .models import Profile, Event, Timeline
 from .forms import EventForm
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 import pdb;
 
 
+@login_required(login_url='login')
 def mypage(request):
     # 後で、filterはログインIDに変える
     #pdb.set_trace()
