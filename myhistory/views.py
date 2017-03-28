@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Profile, Event, Timeline
 from .forms import EventForm
+from django.contrib.auth import authenticate, login
 import pdb;
 
 
