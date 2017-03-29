@@ -58,6 +58,13 @@
 
 
     <div class="row ">
+        <div class="row ">
+            <div class="col-md-1 col-md-offset-10">
+                <a class="btn btn-primary" href="new_timeline" role="button">+</a>
+                <a class="btn btn-primary" href="edit_timeline" role="button">更新・削除</a>
+            </div>
+        </div>
+
         {% for my_timeline in my_timeline_list %}
             <div class="col-md-{% widthratio 12 my_timeline_list|length 1 %}">
                 <h2>{{my_timeline.timeline_name}}</h2>

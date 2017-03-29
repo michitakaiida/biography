@@ -1,5 +1,7 @@
 from django import forms
-from .models import Event, Profile,Timeline
+from .models import Event, Profile, Timeline
+
+
 
 
 class EventForm(forms.ModelForm):
@@ -17,6 +19,15 @@ class ProfileForm(forms.ModelForm):
         model = Profile
         fields = ('mission_statement', 'birthday','dream1','dream2','dream3','strongPoint1','strongPoint2','strongPoint3',
                   'weekPoint1','weekPoint1','weekPoint2','weekPoint3','profile_image')
+
+
+class TimelineForm(forms.ModelForm):
+
+    class Meta:
+        model = Timeline
+        fields = ('timeline_name',)
+
+
 
 
 #class EventForm(forms.ModelForm):
