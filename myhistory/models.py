@@ -16,7 +16,7 @@ class Profile(models.Model):
     weekPoint1 = models.CharField(max_length=200, blank=True, null=True)
     weekPoint2 = models.CharField(max_length=200, blank=True, null=True)
     weekPoint3 = models.CharField(max_length=200, blank=True, null=True)
-    profile_image = models.ImageField(upload_to='images/', null=True)
+    profile_image = models.ImageField(upload_to='images/', null=True ,blank=True, default='images/default_image.jpg')
 
     def publish(self):
         self.save()

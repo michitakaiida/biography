@@ -31,9 +31,11 @@ def profile(request):
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = request.user
-
+            if profile.profile_image is None or profile.profile_image == "":
+                profile.profile_image = 'images/default_image.jpg'
             profile.save()
-            return render(request, 'myhistory/mypage.html', {'my_prifile': my_prifile})
+
+            return redirect(mypage)
 
     return render(request, 'myhistory/edit_profile.html', {'form': form})
 
