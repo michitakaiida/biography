@@ -1,0 +1,12 @@
+{% extends 'myhistory/base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <form method="POST" class="">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">追加</button>
+    </form>
+</div>
+
+{% endblock content %}

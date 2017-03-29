@@ -53,27 +53,38 @@
 
     </br>
 
+
+
+
+
     <div class="row ">
         {% for my_timeline in my_timeline_list %}
             <div class="col-md-{% widthratio 12 my_timeline_list|length 1 %}">
                 <h2>{{my_timeline.timeline_name}}</h2>
                 </br>
-                {% for my_event in my_event_list %}
-                    {% if my_event.timeline == my_timeline %}
-                        <div class="date_text">
-                            {{my_event.event_date}}
-                            {% if my_event.turningpoint_flag %}
-                            <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                        {% endif%}
-                        </div>
+                    {% for my_event in my_event_list %}
+                        {% if my_event.timeline == my_timeline %}
+                            <div class="date_text">
+                                {{my_event.event_date}}
 
+                                {% if my_event.turningpoint_flag %}
+                                <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                                {% endif%}
+
+                            </div>
                         <div class="event_text_{{my_event.event_size}}">
                             {{my_event.event_name}}
                         </div>
-                    </br>
-                    {% endif %}
-                {% endfor %}
+                        </br>
+                        {% endif %}
+                    {% endfor %}
+
+                <div class="row ">
+                    <div class="col-md-1 col-md-offset-10">
+                        <a class="btn btn-primary" href="new_event/{{my_timeline.timeline_name}}" role="button">+</a>
+                    </div>
                 </div>
+            </div>
         {% endfor %}
     </div>
 
