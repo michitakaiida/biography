@@ -15,7 +15,7 @@
   <div class="container">
       {% if user.is_authenticated %}
         <p class="navbar-text navbar-right"> <a href="/logout/" class="navbar-link">Sigin out</a></p>
-        <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"> {{ request.user.username }} </a></p>
+        <p class="navbar-text navbar-right">Signed in as <a href="edit_profile" class="navbar-link"> {{ request.user.username }} </a></p>
       {% else %}
        <p class="navbar-text navbar-right"> <a href="/login/" class="navbar-link">Sigin in</a></p>
       {% endif %}
