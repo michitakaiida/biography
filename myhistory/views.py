@@ -16,14 +16,14 @@ def mypage(request):
     my_event_list = Event.objects.filter(user=request.user).order_by('event_date')
 
     return render(request, 'myhistory/mypage.html', {'my_prifile': my_prifile,
-                                                     'my_timeline_list':my_timeline_list,
-                                                     'my_event_list':my_event_list})
+                                                     'my_timeline_list': my_timeline_list,
+                                                     'my_event_list': my_event_list})
 
 
 @login_required(login_url='login')
 def profile(request):
     my_prifile = get_object_or_404(Profile, user=request.user)
-    #my_prifile = Profile.objects.get(user=request.user)
+    # my_prifile = Profile.objects.get(user=request.user)
     form = ProfileForm(instance=my_prifile)
 
     if request.method == "POST":
@@ -41,7 +41,6 @@ def profile(request):
 
 @login_required(login_url='login')
 def timeline_new(request):
-
     if request.method == "POST":
         form = TimelineForm(request.POST)
         if form.is_valid():
@@ -57,20 +56,22 @@ def timeline_new(request):
 
 @login_required()
 def timeline_edit(request):
-
-
-    TimelineFormSet = modelformset_factory(model=Timeline, form=TimelineForm,extra=0, can_delete=True)
+    TimelineFormSet = modelformset_factory(model=Timeline, form=TimelineForm, extra=0,
+                                           can_delete=True, can_order=True)
     formset = TimelineFormSet(request.POST)
 
     if request.method == "POST":
         formset = TimelineFormSet(request.POST)
 
-        if 1==1 or TimelineFormSet.is_valid():
-            formset.save()
+        if formset.is_valid():
+
             for form in formset:
                 f = form.save(commit=False)
                 f.user = request.user
                 f.save()
+
+            for obj in formset.deleted_forms:
+                Timeline.objects.get(id = obj['id'].value()).delete()
 
             return redirect(mypage)
     else:
@@ -80,8 +81,7 @@ def timeline_edit(request):
 
 
 @login_required(login_url='login')
-def event_new(request,timeline_name):
-
+def event_new(request, timeline_name):
     if request.method == "POST":
         form = EventForm(request.POST)
         if form.is_valid():
