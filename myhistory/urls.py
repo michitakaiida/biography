@@ -13,6 +13,6 @@ urlpatterns = [
     url(r'^edit_timeline', views.timeline_edit, name='timeline_edit'),
     url(r'^login/$', auth_views.login, {'template_name': 'myhistory/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'myhistory/logout.html'}, name='logout'),
-
+    url(r'^sign_up/$', views.sign_up, name='sign_up'),
     #url(r'^', views.mypage, name='mypage'),
 ]

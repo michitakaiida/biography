@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Profile, Event, Timeline
-from .forms import EventForm, ProfileForm, TimelineForm
+from .forms import EventForm, ProfileForm, TimelineForm, SignupForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.forms import modelformset_factory
@@ -94,3 +94,21 @@ def event_new(request, timeline_name):
         form = EventForm()
 
     return render(request, 'myhistory/event_new.html', {'form': form})
+
+
+def sign_up(request):
+
+    if request.method == "POST":
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('login')
+
+    else:
+        form = SignupForm()
+
+    return render(request, 'myhistory/signup.html', {'form': form})
