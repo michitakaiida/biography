@@ -1,6 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
-.idea
+.idea/*
 db.sqlite3
 media/images/*
+biography/__pycache__/*
 myhistory/__pycache__/*
 myhistory/migrations/*
