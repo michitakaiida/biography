@@ -2,3 +2,5 @@
 .idea
 db.sqlite3
 media/images/*
+myhistory/__pycache__/*
+myhistory/migrations/*
