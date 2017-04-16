@@ -11,7 +11,12 @@ import pdb;
 
 @login_required(login_url='login')
 def mypage(request):
-    my_prifile = Profile.objects.get(user=request.user)
+    try:
+        my_prifile = Profile.objects.get(user=request.user)
+    except Profile.DoesNotExist:
+        form = ProfileForm()
+        return render(request, 'myhistory/edit_profile.html', {'form': form})
+
     my_timeline_list = Timeline.objects.filter(user=request.user)
     my_event_list = Event.objects.filter(user=request.user).order_by('event_date')
 
@@ -22,9 +27,13 @@ def mypage(request):
 
 @login_required(login_url='login')
 def profile(request):
-    my_prifile = get_object_or_404(Profile, user=request.user)
-    # my_prifile = Profile.objects.get(user=request.user)
-    form = ProfileForm(instance=my_prifile)
+    my_prifile = Profile()
+    #my_prifile = get_object_or_404(Profile, user=request.user)
+    try:
+        my_prifile = Profile.objects.get(user=request.user)
+        form = ProfileForm(instance=my_prifile)
+    except Profile.DoesNotExist:
+        form = ProfileForm()
 
     if request.method == "POST":
         form = ProfileForm(request.POST, request.FILES, instance=my_prifile)
