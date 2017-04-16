@@ -5,3 +5,5 @@ media/images/*
 biography/__pycache__/*
 myhistory/__pycache__/*
 myhistory/migrations/*
+local_settings.py
+*.py[co]
